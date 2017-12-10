@@ -25,7 +25,18 @@
   <link rel="stylesheet" type="text/css" href="styles/inline.css">
 
   <!-- TODO add manifest here -->
-  
+  <link rel="manifest" href="/manifest.json">
+  <!--Add to Homescreen elements for Safari on iOS-->
+  <!--In your index.html, add the following to the bottom of the <head> element:-->
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Weather PWA">
+  <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+  <!--Tile Icon for Windows-->
+  <!--In your index.html, add the following to the bottom of the <head> element:-->
+  <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
 </head>
 <body>
 
@@ -164,8 +175,21 @@
     </svg>
   </div>
 
+  <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyC5v3K4riyMVBvzFQoGBXfOEFs0Ozkbero",
+      authDomain: "fir-progressive-web-app-802bc.firebaseapp.com",
+      databaseURL: "https://fir-progressive-web-app-802bc.firebaseio.com",
+      projectId: "fir-progressive-web-app-802bc",
+      storageBucket: "fir-progressive-web-app-802bc.appspot.com",
+      messagingSenderId: "763650550867"
+    };
+    firebase.initializeApp(config);
+  </script>
   <!-- Uncomment the line below when ready to test with fake data -->
-  <!--<script src="scripts/app.js" async></script>-->
+  <script src="scripts/app.js" async></script>
 
 </body>
 </html>
